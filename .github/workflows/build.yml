@@ -1,0 +1,64 @@
+name: Build Release Artifacts
+
+on:
+  push:
+    branches:
+      - '**'
+  workflow_dispatch:
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Add MSBuild to PATH
+        uses: microsoft/setup-msbuild@v1.3.1
+        
+      - name: Create Build Directory
+        run: mkdir build
+        
+      - name: Configure CMake
+        run: |
+          cd build
+          cmake .. -A Win32
+        
+      - name: Build DLL
+        run: |
+          cd build
+          cmake --build . --config Release
+          
+      - name: Upload Windows artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-dll
+          path: build/Release/rustext.dll
+
+  build-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential cmake
+        
+      - name: Create Build Directory
+        run: mkdir build
+        
+      - name: Configure CMake
+        run: |
+          cd build
+          cmake .. -DCMAKE_BUILD_TYPE=Release
+        
+      - name: Build SO
+        run: |
+          cd build
+          cmake --build .
+          
+      - name: Upload Linux artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: linux-so
+          path: build/rustext.so
