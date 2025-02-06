@@ -22,6 +22,7 @@ enum RussifierType {
 	RussifierType_Community,
 	RussifierType_Ukrainian,
 	RussifierType_Hungarian,
+	RussifierType_Spanish,
 }
 
 // RussifierType_Ukraine is deprecated

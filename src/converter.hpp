@@ -25,6 +25,7 @@ public:
 		Community,
 		Ukraine,
 		Hungarian,
+		Spanish,
 
 		TypesCount
 	};
