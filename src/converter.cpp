@@ -89,7 +89,8 @@ Converter::Converter()
 	gCharMap[175] = /* Ї */ {{0,   0,   0,   0,   0,   0,   0,   0,   142, 0  , 0  }};
 	gCharMap[191] = /* ї */ {{0,   0,   0,   0,   0,   0,   0,   0,   165, 0  , 175}};
 	// Spanish (Portuguese)
-	gCharMap[161] = /* Ã */ {{0,   0,   0,   0,   0,   0,   0,   0,   0,   0  , 94 }};
+	gCharMap[195] = /* Ã */ {{0,   0,   0,   0,   0,   0,   0,   0,   0,   0  , 65 }};
+	gCharMap[227] = /* ã */ {{0,   0,   0,   0,   0,   0,   0,   0,   0,   0  , 97 }};
 }
 
 void Converter::Process(std::string &string, Converter::Types type)
