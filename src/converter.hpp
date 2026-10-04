@@ -34,6 +34,7 @@ public:
 	Converter();
 	static void Process(std::string &string, Types type);
 	static void Process(char *string, uint32_t length, Types type);
+	static uint8_t GetCode(uint8_t character, Types type);
 
 private:
 	static CharMap_t gCharMap;

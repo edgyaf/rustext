@@ -1,5 +1,5 @@
 project (rustext)
-set (PLUGIN_VERSION "2.0.9")
+set (PLUGIN_VERSION "2.0.10")
 
 cmake_minimum_required (VERSION 2.8)
 list (APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
@@ -29,7 +29,6 @@ add_samp_plugin (${PROJECT_NAME}
 	src/main.hpp
 	src/natives.cpp
 	src/natives.hpp
-	src/sampfunctions.cpp
 	src/sampfunctions.hpp
 	src/converter.cpp
 	src/converter.hpp

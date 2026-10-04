@@ -51,6 +51,9 @@ void Russifier::DisablePlayer(int playerid)
 
 bool Russifier::IsPlayerEnabled(int playerid)
 {
+	if (playerid < 0 || playerid >= MAX_PLAYERS) {
+		return false;
+	}
 	return gIsPlayerEnabled[playerid];
 }
 

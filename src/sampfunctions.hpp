@@ -10,19 +10,6 @@
 
 class Samp {
 public:
-	static int GameTextForAll(const char *string, int time, int style);
-	static int GameTextForPlayer(int playerid, const char *string, int time, int style);
-
-	static int TextDrawCreate(float x, float y, const char *text);
-	static int TextDrawSetString(int text, const char *string);
-
-	static int CreatePlayerTextDraw(int playerid, float x, float y, const char *text);
-	static int PlayerTextDrawSetString(int playerid, int text, const char *string);
-
-	static int CreateMenu(const char *title, int columns, float x, float y, float col1width, float col2width);
-	static int AddMenuItem(int menuid, int column, const char *title);
-	static int SetMenuColumnHeader(int menuid, int column, const char *text);
-
 	static amx_Function_t addr_GameTextForAll;
 	static amx_Function_t addr_GameTextForPlayer;
 	static amx_Function_t addr_TextDrawCreate;

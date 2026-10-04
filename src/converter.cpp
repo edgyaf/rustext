@@ -114,3 +114,12 @@ void Converter::Process(char *string, uint32_t length, Converter::Types type)
 		}
 	}
 }
+
+// Returns the replacement for a character, or 0 when it stays as it is.
+uint8_t Converter::GetCode(uint8_t character, Converter::Types type)
+{
+	if (type < 0 || type >= TypesCount) {
+		return 0;
+	}
+	return gCharMap[character][type];
+}
